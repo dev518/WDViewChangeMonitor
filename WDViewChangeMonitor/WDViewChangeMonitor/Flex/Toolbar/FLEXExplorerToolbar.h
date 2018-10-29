@@ -50,4 +50,7 @@
 /// Users of the toolbar can attach a tap gesture recognizer to show additional details.
 @property (nonatomic, strong, readonly) UIView *selectedViewDescriptionContainer;
 
+@property (nonatomic, strong, readonly) FLEXToolbarItem *monitorItem;
+
+
 @end

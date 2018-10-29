@@ -14,6 +14,8 @@
 @interface FLEXExplorerToolbar ()
 
 @property (nonatomic, strong, readwrite) FLEXToolbarItem *selectItem;
+@property (nonatomic, strong, readwrite) FLEXToolbarItem *monitorItem;
+
 @property (nonatomic, strong, readwrite) FLEXToolbarItem *moveItem;
 @property (nonatomic, strong, readwrite) FLEXToolbarItem *globalsItem;
 @property (nonatomic, strong, readwrite) FLEXToolbarItem *closeItem;
@@ -58,6 +60,9 @@
         UIImage *selectIcon = [FLEXResources selectIcon];
         self.selectItem = [FLEXToolbarItem toolbarItemWithTitle:@"select" image:selectIcon];
         
+        UIImage *monitorIcon = [FLEXResources selectIcon];
+        self.monitorItem = [FLEXToolbarItem toolbarItemWithTitle:@"monitor" image:monitorIcon];
+        
         UIImage *moveIcon = [FLEXResources moveIcon];
         self.moveItem = [FLEXToolbarItem toolbarItemWithTitle:@"move" image:moveIcon];
         
@@ -82,7 +87,7 @@
         self.selectedViewDescriptionLabel.font = [[self class] descriptionLabelFont];
         [self.selectedViewDescriptionSafeAreaContainer addSubview:self.selectedViewDescriptionLabel];
         
-        self.toolbarItems = @[_globalsItem, _hierarchyItem, _selectItem, _moveItem, _closeItem];
+        self.toolbarItems = @[_globalsItem, _hierarchyItem, _selectItem, _moveItem, _closeItem,_monitorItem];
     }
         
     return self;
@@ -174,8 +179,8 @@
     }
     
     // Trim to 5 items if necessary
-    if (toolbarItems.count > 5) {
-        toolbarItems = [toolbarItems subarrayWithRange:NSMakeRange(0, 5)];
+    if (toolbarItems.count > 6) {
+        toolbarItems = [toolbarItems subarrayWithRange:NSMakeRange(0, 6)];
     }
 
     for (FLEXToolbarItem *item in toolbarItems) {

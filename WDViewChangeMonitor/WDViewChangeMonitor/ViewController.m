@@ -10,7 +10,9 @@
 #ifdef DEBUG
 #import "FLEXManager.h"
 #endif
+#import "WDMonitorTool.h"
 @interface ViewController ()
+@property(nonatomic, strong) UILabel *testLabel;
 
 @end
 
@@ -21,12 +23,11 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 - (IBAction)flexBtnClicked:(id)sender {
-
+    
 }
 
 - (IBAction)flexSwitchChaged:(id)sender {
 #ifdef DEBUG
-
     if (((UISwitch *)sender).isOn) {
         [[FLEXManager sharedManager] showExplorer];
     }else{
@@ -34,6 +35,23 @@
     }
 #endif
 
+}
+- (IBAction)testBtnClicked:(id)sender {
+    CGRect frame = self.testLabel.frame;
+    frame.origin.y += 20;
+    self.testLabel.frame = frame;
+}
+- (IBAction)showBtnClicked:(id)sender {
+    [[WDMonitorTool sharedInstance] showTraces];
+}
+
+- (UILabel *)testLabel{
+    if (!_testLabel) {
+        _testLabel = [[UILabel alloc] initWithFrame:CGRectMake(80, 100, 100, 50)];
+        _testLabel.backgroundColor = [UIColor redColor];
+        [self.view addSubview:_testLabel];
+    }
+    return _testLabel;
 }
 
 @end

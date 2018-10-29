@@ -84,6 +84,7 @@
 		9C0A298B2180AED50085B5AD /* FLEXGlobalsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0A293C2180AED50085B5AD /* FLEXGlobalsTableViewController.m */; };
 		9C0A298C2180AED50085B5AD /* FLEXLiveObjectsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0A293D2180AED50085B5AD /* FLEXLiveObjectsTableViewController.m */; };
 		9C0A298D2180AED50085B5AD /* FLEXClassesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0A293E2180AED50085B5AD /* FLEXClassesTableViewController.m */; };
+		9C527CC42186E95C00AF05F5 /* WDMonitorTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C527CC32186E95C00AF05F5 /* WDMonitorTool.m */; };
 		9CB972CA217F263C00651A0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB972C9217F263C00651A0C /* AppDelegate.m */; };
 		9CB972CD217F263C00651A0C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB972CC217F263C00651A0C /* ViewController.m */; };
 		9CB972D0217F263C00651A0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CB972CE217F263C00651A0C /* Main.storyboard */; };
@@ -250,6 +251,9 @@
 		9C0A293C2180AED50085B5AD /* FLEXGlobalsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXGlobalsTableViewController.m; sourceTree = "<group>"; };
 		9C0A293D2180AED50085B5AD /* FLEXLiveObjectsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXLiveObjectsTableViewController.m; sourceTree = "<group>"; };
 		9C0A293E2180AED50085B5AD /* FLEXClassesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEXClassesTableViewController.m; sourceTree = "<group>"; };
+		9C527CC22186E95C00AF05F5 /* WDMonitorTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDMonitorTool.h; sourceTree = "<group>"; };
+		9C527CC32186E95C00AF05F5 /* WDMonitorTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDMonitorTool.m; sourceTree = "<group>"; };
+		9C527CC52186ED7900AF05F5 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		9CB972C5217F263C00651A0C /* WDViewChangeMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WDViewChangeMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB972C8217F263C00651A0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9CB972C9217F263C00651A0C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -541,6 +545,15 @@
 			path = Flex;
 			sourceTree = "<group>";
 		};
+		9C527CC62186EFBE00AF05F5 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				9C527CC22186E95C00AF05F5 /* WDMonitorTool.h */,
+				9C527CC32186E95C00AF05F5 /* WDMonitorTool.m */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
 		9CB972BC217F263C00651A0C = {
 			isa = PBXGroup;
 			children = (
@@ -560,6 +573,7 @@
 		9CB972C7217F263C00651A0C /* WDViewChangeMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				9C527CC62186EFBE00AF05F5 /* base */,
 				9C3E9C292180A807002ECF46 /* Flex */,
 				9CB972C8217F263C00651A0C /* AppDelegate.h */,
 				9CB972C9217F263C00651A0C /* AppDelegate.m */,
@@ -570,6 +584,7 @@
 				9CB972D3217F263E00651A0C /* LaunchScreen.storyboard */,
 				9CB972D6217F263E00651A0C /* Info.plist */,
 				9CB972D7217F263E00651A0C /* main.m */,
+				9C527CC52186ED7900AF05F5 /* PrefixHeader.pch */,
 			);
 			path = WDViewChangeMonitor;
 			sourceTree = "<group>";
@@ -672,6 +687,7 @@
 				9C0A29802180AED50085B5AD /* FLEXTableLeftCell.m in Sources */,
 				9C0A29622180AED50085B5AD /* FLEXHierarchyTableViewController.m in Sources */,
 				9C0A29502180AED50085B5AD /* FLEXArgumentInputFontsPickerView.m in Sources */,
+				9C527CC42186E95C00AF05F5 /* WDMonitorTool.m in Sources */,
 				9C0A29662180AED50085B5AD /* FLEXRuntimeUtility.m in Sources */,
 				9C0A29442180AED50085B5AD /* FLEXMethodCallingViewController.m in Sources */,
 				9C0A29572180AED50085B5AD /* FLEXNetworkTransaction.m in Sources */,
@@ -790,6 +806,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "WDViewChangeMonitor//PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -847,6 +864,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "WDViewChangeMonitor//PrefixHeader.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

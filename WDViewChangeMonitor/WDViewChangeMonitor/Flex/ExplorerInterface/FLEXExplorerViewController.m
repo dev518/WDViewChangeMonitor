@@ -15,7 +15,7 @@
 #import "FLEXObjectExplorerViewController.h"
 #import "FLEXObjectExplorerFactory.h"
 #import "FLEXNetworkHistoryTableViewController.h"
-
+#import "WDMonitorTool.h"
 static NSString *const kFLEXToolbarTopMarginDefaultsKey = @"com.flex.FLEXToolbar.topMargin";
 
 typedef NS_ENUM(NSUInteger, FLEXExplorerMode) {
@@ -368,6 +368,15 @@ typedef NS_ENUM(NSUInteger, FLEXExplorerMode) {
     [self.explorerToolbar.moveItem addTarget:self action:@selector(moveButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.explorerToolbar.globalsItem addTarget:self action:@selector(globalsButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.explorerToolbar.closeItem addTarget:self action:@selector(closeButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.explorerToolbar.monitorItem addTarget:self action:@selector(monitorButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+
+- (void)monitorButtonTapped:(FLEXToolbarItem *)sender{
+    if (self.selectedView) {
+        [[WDMonitorTool sharedInstance] monitorView:self.selectedView];
+    }
 }
 
 - (void)selectButtonTapped:(FLEXToolbarItem *)sender
